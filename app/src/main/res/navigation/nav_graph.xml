@@ -1,0 +1,38 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listeFragment">
+
+    <!-- Liste Fragment -->
+    <fragment
+        android:id="@+id/listeFragment"
+        android:name="com.example.yemek_tarifi_kitabi.view.ListeFragment"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste">
+        <action
+            android:id="@+id/action_listeFragment_to_tarifFragment"
+            app:destination="@id/tarifFragment" />
+    </fragment>
+
+    <!-- Tarif Fragment -->
+    <fragment
+        android:id="@+id/tarifFragment"
+        android:name="com.example.yemek_tarifi_kitabi.view.TarifFragment"
+        android:label="fragment_tarif3"
+        tools:layout="@layout/fragment_tarif3">
+
+        <!-- Tanımladığınız argümanları buraya ekleyin -->
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_tarifFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+    </fragment>
+
+</navigation>
